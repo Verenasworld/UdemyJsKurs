@@ -44,6 +44,6 @@ for(let a of aValues) {
         tr.appendChild(td1);
         tr.appendChild(td2);
 
-        tbodyOr.appendChild(tr);oka
+        tbodyOr.appendChild(tr);
     }
 }
