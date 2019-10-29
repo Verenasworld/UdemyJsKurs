@@ -6,6 +6,7 @@ body {
     align-items: center;
     justify-content: center;
     margin: 100px;
+    box-shadow: 2px 5px 15px 5px rgba(0, 0, 0, 0.5);
 
 
 
@@ -32,7 +33,7 @@ p {
 
 .gradient {
     --borderWidth: 2px;
-    background: #c1efef;
+
     position: relative;
     border-radius: var(--borderWidth);
 }
@@ -43,10 +44,10 @@ p {
     left: calc(-1 * var(--borderWidth));
     height: calc(100% + var(--borderWidth) * 2);
     width: calc(100% + var(--borderWidth) * 2);
-    background: linear-gradient(60deg, #f7e24c, #f37055, #ef4e7b, #2321ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    background: linear-gradient(60deg, #a4bfba, #bfb0a3, #d98566, #592316, #5073b8, #1098ad, #07b39b, #6fba82);
     border-radius: calc(2 * var(--borderWidth));
     z-index: -1;
-    animation: animatedgradient 3s ease alternate infinite;
+    animation: animatedgradient 5s ease alternate infinite;
     background-size: 300% 300%;
 }
 

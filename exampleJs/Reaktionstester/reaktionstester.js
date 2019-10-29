@@ -7,14 +7,14 @@
 
 window.addEventListener("load", function () {
     setTimeout(function() {
-        document.body.style.backgroundColor = "#acd1ef";
+        document.body.style.backgroundColor = "#c1efef";
         let start = Date.now();
 
         document.body.addEventListener("click" , function () {
             let end = Date.now();
             let difference = end - start;
             alert( " du hast " + (difference / 1000 + " Sekunden benötigt " ));
-            alert("Reaktionstester");
+
             
         }, false);
     },2500 + Math.random() * 5000 )
