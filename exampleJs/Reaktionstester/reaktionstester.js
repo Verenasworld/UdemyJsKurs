@@ -14,9 +14,8 @@ window.addEventListener("load", function () {
             let end = Date.now();
             let difference = end - start;
             alert( " du hast " + (difference / 1000 + " Sekunden benötigt " ));
-
-            
-        }, false);
+            document.location.reload();
+            }, false);
     },2500 + Math.random() * 5000 )
 
 });
