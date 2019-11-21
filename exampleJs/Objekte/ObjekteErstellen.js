@@ -17,20 +17,39 @@
 // quasi das Muster ( Bauplan  = Klasse )
 
 class Person{
+
+    constructor(firstname, lastname, age){
+        this.firstname =firstname;
+        this.lastname = lastname;
+        this.age = age;
+        //hier wird die verbindung hergestellt zu this
+
+        console.log("constructor() wurde ausgefuert");
+    //    construktur  wird bei jeden erstellen einer neuer Person ausgeführt und ist eine funktion dem ich parameter übergeben kann
+    }
     printPerson(){
-        console.log(this.firstname + " " + this.lastname + " (" + this.age + ")")
+        console.log(this.firstname + " " + this.lastname + " (" + this.age + ")");
+    //    über this greift man auf die Eigenschaften zu die im Objekt festgelegt sind.
     }
 }
 
-// nehme neue Person ( Max ) und erstelle eine neue Instanz der Klasse - new Person (quasi mit dem Bauplan ( class Person)) und führe die Methode printPerson aus
+ // neue Person ( Max ) erstelle eine neue Instanz der Klasse - Person (quasi mit dem Bauplan ( class Person)) und führe die Methode printPerson aus
+
+//schreibweise 1
 let max= new Person();
 max.firstname ="Max";
 max.lastname= "Mustermann";
 max.age = 24;
 max.printPerson();
 
-
-let verena= new Person();
+//ausgabe undefindet weil nicht jede Eigenschaft angegeben ist
+let verena = new Person();
 verena.firstname="Verena";
 verena.age = 45;
 verena.printPerson();
+
+//schreibweise 2 mit constructor funktion durch übergebene Parameter
+
+let erika = new Person ("Erika", "Mustermann", 55);
+erika.printPerson();
+
