@@ -1,4 +1,4 @@
-"use strickt"
+
 //Objektorentierung für strukturierten und übersichtlichen code
 //zb. Klasse - quasi der Bauplan eines - Auto - ist ein Objekt . Mehode -blinke / licht anschalten  . Eigenschaft - ps/ liter / farbe ( grobes Beispiel )
 
@@ -23,13 +23,14 @@ class Person{
         this.lastname = lastname;
         this.age = age;
         //hier wird die verbindung hergestellt zu this
-
+        console.log(this);
+        // Ausgabe der Person in der Console zum aufklappen mit angabe der variablen ( firstname, lastname, age ) ( alles steht untereinander)
         console.log("constructor() wurde ausgefuert");
     //    construktur  wird bei jeden erstellen einer neuer Person ausgeführt und ist eine funktion dem ich parameter übergeben kann
     }
     printPerson(){
         console.log(this.firstname + " " + this.lastname + " (" + this.age + ")");
-    //    über this greift man auf die Eigenschaften zu die im Objekt festgelegt sind.
+    //    über this greift man auf die Eigenschaften zu die im Objekt festgelegt sind. ( ausgabe wie definiert, ohne angabe variablen name ( firstname, lastname, age)
     }
 }
 
@@ -53,3 +54,5 @@ verena.printPerson();
 let erika = new Person ("Erika", "Mustermann", 55);
 erika.printPerson();
 
+let furz = new Person("harri", "furz", 101);
+furz.printPerson();
