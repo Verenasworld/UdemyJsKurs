@@ -11,12 +11,18 @@ class Renderer {
         this.element= element;
     }
 
-    //    render methode implemendieren
+    //    render methode implemendieren!
         render() {
-            // console.log(this);
-            //eine box erstellen
+                                                                        // console.log(this);
+                                                                        //eine box erstellen
             let box = document.createElement("div");
-        //    eingügen der Box in mein Spielfeld
+
+                                                                            //    box positionieren
+            box.style.position = "absolute";
+            box.style.top = "20px";
+            box.style.top = "20px";
+
+                                                                             //    einfügen der Box in mein Spielfeld
             this.element.appendChild(box);
 
         }
