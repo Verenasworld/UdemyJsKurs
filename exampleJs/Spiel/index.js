@@ -3,23 +3,22 @@
 
                                                                                                                           // Create a class for playing area to be able to display this / Klasse erstellen für die Anzeige des Spiels
                                                                                                                           // renderer = denotes the process that we are indicating / was anzeigen
-    class Renderer {                                                                                                //Construktor bekommt das element übergeben mit dem der renderer arbeiten soll.
+    class Renderer {                                                                                                     //Constructor gets passed the element the renderer should work with.
 
-    constructor(element) {                                                                                          //  constructor funktion ???
-        this.element = element;                                                                                     //  game element in klasse gespeichert
-        this.setup()                                                                                                // konstruktor führt die setup methode aus
+    constructor(element) {                                                                                               //  constructor function
+        this.element = element;                                                                                          //  Game element saved in class
+        this.setup()                                                                                              // konstruktor führt die setup methode aus
 
     }
 
-    setup() {                                                                                                        //Set up Methode - erstellen eines Einstellung Setup zum  stylen & hinzufügen zum DOM einer Box.
+    setup() {                                                                                                      //Set up Methode - erstellen eines Einstellung Setup zum  stylen & hinzufügen zum DOM einer Box.
 
-                                                                                                                      // eine box erstellen
-        let box = document.createElement("div");
-                                                                                                                 // box positionieren
-        box.style.position = "absolute";
+
+        let box = document.createElement("div");                                                                 // create the box
+
+        box.style.position = "absolute";                                                                                  // position & style the box
         box.style.top = "20px";
         box.style.left = "20px";
-                                                                                                                      // box stylen
         box.style.width = "20px";
         box.style.height = "20px";
         box.style.backgroundColor = "white";
