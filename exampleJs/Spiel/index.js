@@ -71,7 +71,12 @@ class Game{                                                                     
     }
     start(){
         setInterval(() => {                                                             // eine funktion erstellen die mir die render methode 1 mal pro sekunde ausführt
-            this.box.runLoop();                                                                  //steuerung ??
+            this.box.runLoop();                                                                  //position wird aktualisiert
+           if (this.box.position < 0){                                                              //wenn die box einen minus wert erreicht ( spielflächen Kante)
+               console.log(" GAME OVER ! top edge reached");                                                            //gib etwas aus ....
+           }
+           if (this.box.position + 20 > this.element.clientHeight)                 //aus Dom = Attribut für die  angabe der höhe des elements, wird verwendet für den unteren Rand den die Box erreichen kann ( begrenzung ) ( unterer Rand box & spielfeldkante
+               console.log(" GAME OVER ! top edg reached lower edge");                                                 //untere Kannte erreicht
             this.renderer.render(this.box.position);                                            //ausführung der methode render
         },100);
     }
