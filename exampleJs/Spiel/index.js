@@ -3,7 +3,7 @@
 
                                                                                                                           // Create a class for playing area to be able to display this / Klasse erstellen für die Anzeige des Spiels
                                                                                                                           // renderer = denotes the process that we are indicating / was anzeigen
-    class Renderer {                                                                                                //konstruktor bekommt das element übergeben mit dem der renderer arbeiten soll.
+    class Renderer {                                                                                                //Construktor bekommt das element übergeben mit dem der renderer arbeiten soll.
 
     constructor(element) {                                                                                          //  constructor funktion ???
         this.element = element;                                                                                     //  game element in klasse gespeichert
@@ -11,15 +11,15 @@
 
     }
 
-    setup() {                                                                   //erstellen eines Einstellung Setup zum erstellen stylen & hinzufügen zum DOM einer Box.
+    setup() {                                                                                                        //Set up Methode - erstellen eines Einstellung Setup zum  stylen & hinzufügen zum DOM einer Box.
 
-                                                                                // eine box erstellen
+                                                                                                                      // eine box erstellen
         let box = document.createElement("div");
-                                                                                // box positionieren
+                                                                                                                 // box positionieren
         box.style.position = "absolute";
         box.style.top = "20px";
         box.style.left = "20px";
-                                                                                    // box stylen
+                                                                                                                      // box stylen
         box.style.width = "20px";
         box.style.height = "20px";
         box.style.backgroundColor = "white";
@@ -44,12 +44,13 @@ class Box {                                                                     
         this.speed = 0;                                                                   //box geschiwndigkeit anfang
     }
     runLoop(){                                                                             //erstekken einer methode _
-       this.position ++;                                                                   //verschieben der box um eines nach unten!!!
+        this.speed ++;                                                                      //erhöhen der geschwindigkeit ums eins !!
+       this.position = this.position + this.speed;                                                       //verschieben der box  in verbindung mit der geschiwndigkeit somit wird die box im fall immer schneller !
     };
 
     moveUp(){
-        this.position = this.position -20;                                       //wenn box geklickt wird dann ändere position 20 px nach oben
-
+        // this.position = this.position -20;                                                    //wenn box geklickt wird dann ändere position 20 px nach oben
+        this.speed = this.speed - 20;                                                              //wir verringern die geschwindigkeit - dadurch bewegt sich die box langsamer nach oben
     }
 }
 
