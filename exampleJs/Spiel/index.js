@@ -1,13 +1,13 @@
 "use strict";
 
 
-                                                                                 //klasse erstellen für spielfläche um diese anzeigen zu können
-                                                                                // renderer = bezeichnet den Prozess das wir irgendwas anzeigen
-    class Renderer {                                                              //konstruktor bekommt das element übergeben mit dem der renderer arbeiten soll.
+                                                                                                                          // Create a class for playing area to be able to display this / Klasse erstellen für die Anzeige des Spiels
+                                                                                                                          // renderer = denotes the process that we are indicating / was anzeigen
+    class Renderer {                                                                                                //konstruktor bekommt das element übergeben mit dem der renderer arbeiten soll.
 
-    constructor(element) {                                                          //  constructor funktion ???
-        this.element = element;                                                      //  game element in klasse gespeichert
-        this.setup()                                                                  // konstruktor führt die setup methode aus
+    constructor(element) {                                                                                          //  constructor funktion ???
+        this.element = element;                                                                                     //  game element in klasse gespeichert
+        this.setup()                                                                                                // konstruktor führt die setup methode aus
 
     }
 
@@ -38,13 +38,13 @@
 
 
 
-class Box {                                                                           //klasse erstellen für die "steuerung" der box
+class Box {                                                                           //klasse erstellen für die "steuerung" der box ( position, speed , click Event)
     constructor(){
-        this.position = 0;
-
+        this.position = 0;                                                                //box position anfang
+        this.speed = 0;                                                                   //box geschiwndigkeit anfang
     }
-    runLoop(){                                                                                 //erstekken einer methode _
-       this.position ++;                                                     //verschieben der box um eines nach unten!!!
+    runLoop(){                                                                             //erstekken einer methode _
+       this.position ++;                                                                   //verschieben der box um eines nach unten!!!
     };
 
     moveUp(){
