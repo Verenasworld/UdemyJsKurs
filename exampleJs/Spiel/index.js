@@ -3,7 +3,7 @@
 
                                                                                                                           // Create a class for playing area to be able to display this / Klasse erstellen für die Anzeige des Spiels
                                                                                                                           // renderer = denotes the process that we are indicating / was anzeigen
-    class Renderer {                                                                                                     //Constructor gets passed the element the renderer should work with.
+class Renderer {                                                                                                     //Constructor gets passed the element the renderer should work with.
 
     constructor(element) {                                                                                               //  constructor function
         this.element = element;                                                                                          //  Game element saved in class
@@ -49,7 +49,7 @@ class Box {                                                                     
 
     moveUp(){
         // this.position = this.position -20;                                                    //wenn box geklickt wird dann ändere position 20 px nach oben
-        this.speed = this.speed - 20;                                                              //wir verringern die geschwindigkeit - dadurch bewegt sich die box langsamer nach oben
+        this.speed = -20;                                                              //wir verringern die geschwindigkeit - dadurch bewegt sich die box langsamer nach oben
     }
 }
 
@@ -57,8 +57,9 @@ class Box {                                                                     
 class Game{                                                                             // klasse erstellen  - die das spiel "representieren" soll
     constructor(element){                                                                //die klasse hat einen  constructor dem ich das element übergebe
             this.renderer = new Renderer(element);
-            this.box = new Box();
+            this.box = new Box();                                                    // Box objekt variabke ??
             this.element = element;
+            this.isRunning = true;                                                      // läuft
             this.setup();
 
     }
@@ -70,15 +71,29 @@ class Game{                                                                     
 
     }
     start(){
-        setInterval(() => {                                                             // eine funktion erstellen die mir die render methode 1 mal pro sekunde ausführt
+        let counter = 0;
+
+        let timer = setInterval(() => {                                                             // eine funktion erstellen die mir die render methode 1 mal pro sekunde ausführt sie hat einen rückgabe wert der in der variable timer gespeichert wird
+            counter++;                                                                              //counter erhöhen um 1
             this.box.runLoop();                                                                  //position wird aktualisiert
            if (this.box.position < 0){                                                              //wenn die box einen minus wert erreicht ( spielflächen Kante)
-               console.log(" GAME OVER ! top edge reached");                                                            //gib etwas aus ....
+              this.isRunning = false;                                                                    //setzt isRunning auf false somit wird  keine position mehr übergeben somit bleibt die box an der kante stehen oben
+               clearInterval(timer);
+               alert(" GAME OVER ! Your SCORE is "  + counter );                                                            // ausführung wenn oberer Rand erreicht
            }
-           if (this.box.position + 20 > this.element.clientHeight)                 //aus Dom = Attribut für die  angabe der höhe des elements, wird verwendet für den unteren Rand den die Box erreichen kann ( begrenzung ) ( unterer Rand box & spielfeldkante
-               console.log(" GAME OVER ! top edg reached lower edge");                                                 //untere Kannte erreicht
-            this.renderer.render(this.box.position);                                            //ausführung der methode render
-        },100);
+           if (this.box.position + 20 > this.element.clientHeight) {             //aus Dom = Attribut für die  angabe der höhe des elements, wird verwendet für den unteren Rand den die Box erreichen kann ( begrenzung ) ( unterer Rand box & spielfeldkante
+               this.isRunning = false;                                                                  //setzt isRunning auf false somit wird  keine position mehr übergeben somit bleibt die box an der kante stehen unten
+               clearInterval(timer);                                                                     // intervall stoppen
+            alert(" GAME OVER ! " + " Your SCORE is " + counter );                                                  //ausgabe wenn unterer rand erreicht wurde
+           }
+
+            if (this.isRunning == true){
+                this.renderer.render(this.box.position);                                                                 //ausführung der methode render
+            }
+
+
+        },40);
+       console.log(timer);
     }
 
 }
@@ -93,4 +108,4 @@ game.start();
 
 //TODO counter position korr. the steps are to big         done !!!
 
-// TODO change in cor. pos. ( relative & absolute dont working )
+// TODO change in cor. pos. ( relative & absolute dont working   done!!!
