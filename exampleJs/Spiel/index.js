@@ -3,15 +3,15 @@
 
                                                                                                                           // Create a class for playing area to be able to display this / Klasse erstellen für die Anzeige des Spiels
                                                                                                                           // renderer = denotes the process that we are indicating / was anzeigen
-class Renderer {                                                                                                     //Constructor gets passed the element the renderer should work with.
+class Renderer {                                                                                                           //Constructor gets passed the element the renderer should work with.
 
     constructor(element) {                                                                                               //  constructor function
         this.element = element;                                                                                          //  Game element saved in class
-        this.setup()                                                                                              // konstruktor führt die setup methode aus
+        this.setup()                                                                                                      // constructor executes the setup method / ausführung der setup methode
 
     }
 
-    setup() {                                                                                                      //Set up Methode - erstellen eines Einstellung Setup zum  stylen & hinzufügen zum DOM einer Box.
+    setup() {                                                                                                             //Set up Method - create a setup setup to style & add to the DOM of a box..
 
 
         let box = document.createElement("div");                                                                 // create the box
@@ -22,13 +22,15 @@ class Renderer {                                                                
         box.style.width = "20px";
         box.style.height = "20px";
         box.style.backgroundColor = "white";
+        box.style.border =" 1px solid black";
+        box.style.borderRadius="100px";
 
-        this.element.appendChild(box);                                          // einfügen der Box in mein Spielfeld
+        this.element.appendChild(box);                                                                                   // insert the box into my playing area
         this.box = box;                                                         // setzte die box auf die box ( dient dazu das ich in render methode auf die box zugreifen kann)
     }
 
 
-    render(position) {                                                            //    render methode implemendieren!
+    render(position) {                                                                                                    //    implement the render method
 
         this.box.style.top = position + "px";
     }
@@ -79,15 +81,15 @@ class Game{                                                                     
            if (this.box.position < 0){                                                              //wenn die box einen minus wert erreicht ( spielflächen Kante)
               this.isRunning = false;                                                                    //setzt isRunning auf false somit wird  keine position mehr übergeben somit bleibt die box an der kante stehen oben
                clearInterval(timer);
-               alert(" GAME OVER ! Your SCORE is "  + counter );                                                            // ausführung wenn oberer Rand erreicht
+               alert(" GAME OVER ! \n Your SCORE is "  + counter );                                                            // ausführung wenn oberer Rand erreicht
            }
-           if (this.box.position + 20 > this.element.clientHeight) {             //aus Dom = Attribut für die  angabe der höhe des elements, wird verwendet für den unteren Rand den die Box erreichen kann ( begrenzung ) ( unterer Rand box & spielfeldkante
+           if (this.box.position +20 > this.element.clientHeight) {             //aus Dom = Attribut für die  angabe der höhe des elements, wird verwendet für den unteren Rand den die Box erreichen kann ( begrenzung ) ( unterer Rand box & spielfeldkante
                this.isRunning = false;                                                                  //setzt isRunning auf false somit wird  keine position mehr übergeben somit bleibt die box an der kante stehen unten
                clearInterval(timer);                                                                     // intervall stoppen
-            alert(" GAME OVER ! " + " Your SCORE is " + counter );                                                  //ausgabe wenn unterer rand erreicht wurde
+            alert(" GAME OVER ! \n Your SCORE is " + counter );                                                  //ausgabe wenn unterer rand erreicht wurde
            }
 
-            if (this.isRunning == true){
+            if (this.isRunning === true){
                 this.renderer.render(this.box.position);                                                                 //ausführung der methode render
             }
 
