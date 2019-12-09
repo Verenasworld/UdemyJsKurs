@@ -10,9 +10,16 @@ jQuery(document).ready(function ($) {
 
 
 jQuery(document).ready(function ($) {
-     //without caching (save code lines)
+     //without caching (lines are shorter)
     $("p.paragraph1")
         .css("color", "white")
         .css("background-color", "red");
 });
 
+
+//  Example of what that would look like without jQuery
+let elements = document.querySelector("p.paragraph2");
+for (let element of elements){
+    element.style.color = "green";
+    element.style.backgroundColor = "yellow";
+}
