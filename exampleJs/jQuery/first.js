@@ -18,8 +18,10 @@ jQuery(document).ready(function ($) {
 
 
 //  Example of what that would look like without jQuery
-let elements = document.querySelector("p.paragraph2");
-for (let element of elements){
-    element.style.color = "green";
-    element.style.backgroundColor = "yellow";
-}
+let elements = document.querySelectorAll("p.paragraph2");
+    for (let element of elements) {
+        element.style.color = "green";
+        element.style.backgroundColor = "yellow";
+    }
+
+
