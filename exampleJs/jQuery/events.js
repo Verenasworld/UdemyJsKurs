@@ -23,5 +23,16 @@ jQuery(document).ready(function ($) {
         $(this).css("color", "black");
     });
 
+// Hover with jQuery
+    $(".paragraph4")
+        .click(function () {
+            $(this).css("color", "yellow");
+        })
+        .mouseenter(function () {
+            $(this).css("color", "blue");
+        })
+        .mouseleave(function () {
+            $(this).css("color", "green");
+        })
 
 });
