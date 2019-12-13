@@ -9,10 +9,13 @@ jQuery(document).ready(function ($) {
         let overlay = $.parseHTML("<div id='overlay'></div>");
         $("body").append(overlay);
 
-        let image = $.parseHTML("<img> id='image-overlay'</img>");
+        let image = $.parseHTML("<img id='image-overlay'>");
         let src = $(this).attr("href");
         $(image).attr("src", src);
+
+        let container = $.parseHTML("<div id='overlay-container'></div>");
+        $(container).append(image);
         $("body").append(image);
     });
-    
+
 });
