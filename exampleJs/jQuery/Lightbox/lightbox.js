@@ -12,10 +12,15 @@ jQuery(document).ready(function ($) {
         let image = $.parseHTML("<img id='image-overlay'>");
         let src = $(this).attr("href");
         $(image).attr("src", src);
+        $(image).click(function () {
+                $("#overlay").remove();
+                $("#overlay-container").remove();
+
+        });
 
         let container = $.parseHTML("<div id='overlay-container'></div>");
         $(container).append(image);
-        $("body").append(image);
+        $("body").append(container);
     });
 
 });
