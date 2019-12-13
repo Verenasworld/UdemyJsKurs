@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Light-Box</title>
+    <style>
+        .gallery{
+            clear: both;
+        }
+
+        .gallery-item{
+            display: block;
+            float: left;
+            text-decoration: none;
+            padding: 3px;
+            border: 1px solid rgba(200,200,200,0.8);
+            margin: 5px;
+        }
+        .gallery-item:hover{
+            text-decoration: none;
+            background-color: rgba(100, 100, 100, 0.5);
+        }
+        .gallery-item img {
+            max-width: 200px;
+        }
+
+        #overlay{
+            position: absolute;
+            /*    ich hohle mein div aus dem flow damit ich es seperat positionieren kann so wie ich das möchte  */
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: black ;
+            opacity: 0.7;
+
+
+        }
+    </style>
+
+</head>
+<body>
+        <div class="gallery">
+                  <a href="img/PSX_20190222_085737(29).jpg" class="gallery-item">
+                      <img src="img/PSX_20190222_085737(29).jpg " alt=""/>
+                  </a>
+                  <a href="img/PSX_20190222_085754(30).jpg" class="gallery-item">
+                      <img src="img/PSX_20190222_085754(30).jpg " alt="" />
+                  </a>
+                  <a href="img/PSX_20190222_085829(31).jpg" class="gallery-item">
+                     <img src="img/PSX_20190222_085829(31).jpg" alt="" />
+                  </a>
+                  <a href="img/PSX_20190222_085921(32).jpg" class="gallery-item">
+                         <img src="img/PSX_20190222_085921(32).jpg " alt="" />
+                  </a>
+        </div>
+
+
+<script type="text/javascript" src="index.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+</html>
