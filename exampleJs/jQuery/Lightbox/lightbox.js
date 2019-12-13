@@ -19,6 +19,11 @@ jQuery(document).ready(function ($) {
         });
 
         let container = $.parseHTML("<div id='overlay-container'></div>");
+        $(image).click(function () {
+            $("#overlay").remove();
+            $("#overlay-container").remove();
+
+        });
         $(container).append(image);
         $("body").append(container);
     });
