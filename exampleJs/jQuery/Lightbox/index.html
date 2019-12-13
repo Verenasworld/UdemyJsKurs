@@ -36,6 +36,21 @@
 
 
         }
+        #overlay-container{
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+
+        }
+
+        #image-overlay{
+            max-width: 50%;
+            max-height: 70%;
+            margin: 10% auto 10% auto;
+            display: block;
+        }
     </style>
 
 </head>
@@ -55,6 +70,10 @@
                   </a>
         </div>
 
+        <div id="overlay"></div>
+        <div id="overlay-container">
+        <img id="image-overlay" src="./img/PSX_20190222_085921(32).jpg"/>
+        </div>
 
 <script type="text/javascript" src="index.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
