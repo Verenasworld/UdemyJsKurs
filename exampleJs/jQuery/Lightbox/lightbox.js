@@ -1,14 +1,15 @@
 "use strict";
 
-jQuery(document).ready(function ($) {
+let initLightbox = function (items) {
+
     $(document).keydown(function (event) {
-     if (event.key ==="Escape"){
-         $("#overlay").remove();
-         $("#overlay-container").remove();
-     }
+        if (event.key === "Escape") {
+            $("#overlay").remove();
+            $("#overlay-container").remove();
+        }
     });
 
-    $(".gallery-item").click(function (event) {
+    $(".items").click(function (event) {
         event.preventDefault();
         let overlay = $.parseHTML("<div id='overlay'></div>");
         $("body").append(overlay);
@@ -26,4 +27,4 @@ jQuery(document).ready(function ($) {
         $("body").append(container);
     });
 
-});
+};
