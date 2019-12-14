@@ -1,7 +1,5 @@
 "use strict";
-
-let initLightbox = function (items) {
-
+jQuery.fn.lightbox = function(){
     $(document).keydown(function (event) {
         if (event.key === "Escape") {
             $("#overlay").remove();
@@ -9,7 +7,7 @@ let initLightbox = function (items) {
         }
     });
 
-    $(".items").click(function (event) {
+    $(this).click(function (event) {
         event.preventDefault();
         let overlay = $.parseHTML("<div id='overlay'></div>");
         $("body").append(overlay);
@@ -26,5 +24,4 @@ let initLightbox = function (items) {
         $(container).append(image);
         $("body").append(container);
     });
-
 };
