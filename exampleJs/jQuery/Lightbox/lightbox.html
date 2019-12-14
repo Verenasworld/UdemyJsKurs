@@ -6,6 +6,32 @@
     <link href="lightbox.css" type="text/css" rel="stylesheet"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+    <style>
+        .gallery{
+             clear: both;
+         }
+
+         .gallery-item {
+             display: block;
+             float: left;
+             text-decoration: none;
+             padding: 3px;
+             border: 1px solid rgba(200, 200, 200, 0.8);
+             margin: 5px;
+         }
+
+           .gallery-item:hover {
+        text-decoration: none;
+        background-color: rgba(100, 100, 100, 0.5);
+          }
+
+            .gallery-item img {
+        max-width: 200px;
+          }
+
+    </style>
+    <link rel="stylesheet" type="text/css" href="lightbox.css">
+
 </head>
 <body>
         <div class="gallery">
@@ -24,6 +50,7 @@
         </div>
 
 <script type="text/javascript" src="lightbox.js"></script>
+        <script type="text/javascript" src="indexJ.js"></script>
 
 </body>
 </html>
